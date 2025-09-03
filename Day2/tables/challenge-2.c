@@ -7,7 +7,7 @@ void main () {
     scanf("%d", &size);
     int nmbrTable [size];
     for (int i = 0 ; i < size  ; i++){
-        printf("entrere le nomber %d :", i+1);
+        printf("entrer le nombere %d :", i+1);
         scanf("%d", &nmbr);
         nmbrTable[i] = nmbr;
     }
