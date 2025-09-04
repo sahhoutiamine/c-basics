@@ -105,8 +105,11 @@ void main () {
             printf("%d\n", qtelivres[i]);
             
     }
+
     int nmbrAct ;
-    printf("\n1-Modifier un livre \n2-Supprimer un livre \n3-Affichier le total livers en stock \n4-Rechercher un livre\n ->");
+    do
+    {
+    printf("\n\n1-Modifier un livre \n2-Supprimer un livre \n3-Affichier le total livers en stock \n4-Rechercher un livre\n ->");
     scanf("%d", &nmbrAct);
 
     if (nmbrAct == 1) {
@@ -161,26 +164,27 @@ void main () {
         int livreSupp;
         printf("entrer le nombre du livre qui peut supprimer :");
         scanf("%d", &livreSupp);
-        for (int i = livreSupp - 2 ; i >= 0 ; i--) 
+        for (int i = livreSupp - 1 ; i < nmbrLivre ; i++) 
         {
             char nom[20];
-            strcpy(nom, nomlivres[i]);
-            strcpy(nomlivres[i+1], nom);
+            strcpy(nom, nomlivres[i+1]);
+            strcpy(nomlivres[i], nom);
 
             char auteur[20];
-            strcpy(auteur, auteurslivres[i]);
-            strcpy(auteurslivres[i+1], auteur);
+            strcpy(auteur, auteurslivres[i+1]);
+            strcpy(auteurslivres[i], auteur);
 
-            int prix = prixlivres[i];
-            prixlivres[i+1] = prix;
+            int prix = prixlivres[i+1];
+            prixlivres[i] = prix;
 
-            int qte = qtelivres[i];
-            qtelivres[i+1] = qte;
+            int qte = qtelivres[i+1];
+            qtelivres[i] = qte;
         }
+        nmbrLivre--;
         
-        for (int i = 1 ; i < nmbrLivre ; i++) 
+        for (int i = 0 ; i < nmbrLivre ; i++) 
         {
-            printf("\nLivre %d :\n%s\n", i, nomlivres[i]);
+            printf("\nLivre %d :\n%s\n", i+1, nomlivres[i]);
             printf("%s\n", auteurslivres[i]);
             printf("%d\n", prixlivres[i]);
             printf("%d\n", qtelivres[i]);
@@ -208,6 +212,7 @@ void main () {
         }
 
     }
+    } while (nmbrAct != 0);
     
     
 
