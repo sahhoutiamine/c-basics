@@ -80,13 +80,13 @@ void main () {
 
     for (int i = 0  ;  i < nmbrLivre; i++) 
     {
-        printf("Titre de livre :");
+        printf("\nTitre de livre %d :", i+1);
         scanf("%s", &nomLivre);
-        printf("Auteur de livre :");
+        printf("Auteur de livre %d :", i+1);
         scanf("%s", &auteur);
-        printf("Prix de livre :");
+        printf("Prix de livre %d :", i+1);
         scanf("%d", &prix);
-        printf("Qte de livre :");
+        printf("Qte de livre %d :", i+1);
         scanf("%d", &qteStock);
 
         strcpy(nomlivres[i], nomLivre);
@@ -99,12 +99,59 @@ void main () {
 
     for  (int i = 0  ;  i < nmbrLivre; i++) {
 
-            printf("Livre %d :\n%s\n", i+1, nomlivres[i]);
+            printf("\nLivre %d :\n%s\n", i+1, nomlivres[i]);
             printf("%s\n", auteurslivres[i]);
             printf("%d\n", prixlivres[i]);
-            printf("%d\n\n", qtelivres[i]);
+            printf("%d\n", qtelivres[i]);
+            
+    }
+    
+    int nmbrLivreMod;
+    int tableMod;
+    char valeurChar[20];
+    int valeurInt;
+    printf("entrer le nombre de livre qui peut modifier :");
+    scanf("%d", &nmbrLivreMod);
+    for (int i = 0 ; i < nmbrLivre ; i++) {
+        if (nmbrLivreMod == i+1) {
+            printf("Modifier le : \n1-Nom \n2-Auteur \n3-Prix \n4-Qte\n ->");
+            scanf("%d", &tableMod);
+            if (tableMod == 1) {
+                printf("entrer la valeur :");
+                scanf("%s", &valeurChar);
+                strcpy(nomlivres[i], valeurChar);
+            }
+            else if (tableMod == 2)
+            {
+                printf("entrer la valeur :");
+                scanf("%s", &valeurChar);
+                strcpy(auteurslivres[i], valeurChar);
+            }
+            else if (tableMod == 3)
+            {
+                printf("entrer la valeur :");
+                scanf("%d", &valeurInt);
+                prixlivres[i] = valeurInt;
+            }
+            else if (tableMod == 4)
+            {
+                printf("entrer la valeur :");
+                scanf("%d", &valeurInt);
+                qtelivres[i] = valeurInt;
+            }
+            
+            
             
         }
+    }
+    for  (int i = 0  ;  i < nmbrLivre; i++) {
+
+            printf("\nLivre %d :\n%s\n", i+1, nomlivres[i]);
+            printf("%s\n", auteurslivres[i]);
+            printf("%d\n", prixlivres[i]);
+            printf("%d\n", qtelivres[i]);
+            
+    }
 
 
 
