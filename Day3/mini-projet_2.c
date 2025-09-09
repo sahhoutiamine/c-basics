@@ -157,7 +157,7 @@ void main ()
         fgets(nomContSupp, sizeof(nomContSupp), stdin);
         for (int i = 0 ; i < cmp ; i++) 
         {
-            if (strcmp(contact[i].nom, nomContRech) == 0) 
+            if (strcmp(contact[i].nom, nomContSupp) == 0) 
             {
                 for (int j = i ; j < cmp ; j++)
                 {
